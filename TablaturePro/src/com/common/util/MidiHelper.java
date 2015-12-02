@@ -26,7 +26,7 @@ import com.common.bo.MidiNote;
 public class MidiHelper {
 	
 	
-	public static Map<Long, List<MidiNote>> getMidiNote(File midiFie) throws InvalidMidiDataException, IOException {		
+	public static Map<Long, List<MidiNote>> getMidiNotes(File midiFie) throws InvalidMidiDataException, IOException {		
 		Sequence sequence = MidiSystem.getSequence(midiFie);
 		Map<Long, List<MidiNote>> noteMap = new HashMap<>();		
 		for (Track track :  sequence.getTracks()) {

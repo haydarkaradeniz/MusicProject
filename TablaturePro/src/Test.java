@@ -21,6 +21,8 @@ import javax.sound.midi.Track;
 
 import com.common.bo.MidiNote;
 import com.common.util.CommonConstants;
+import com.common.util.MidiHelper;
+import com.common.util.XmlHelper;
 
 public class Test {
 	private static void put(Map<Long, List<MidiNote>> noteMap, int channel, long tick, MidiNote note) {
@@ -110,12 +112,15 @@ public class Test {
 	}
 	
     public static void main(String[] args) throws Exception {
-    	test1();
+//    	Map<Long, List<MidiNote>> noteMap = MidiHelper.getMidiNotes(new File("C:\\Users\\is96092\\Desktop\\music\\furelise.mid"));    	
+//    	MidiHelper.playNoteMap(noteMap, MidiHelper.getSortedKey(noteMap), 90, 200, 0);
+    	XmlHelper.test();
+
     }
     
     
     public static void test1() throws InvalidMidiDataException, IOException {
-    	 Sequence sequence = MidiSystem.getSequence(new File("C:\\Users\\is96092\\Desktop\\furelise.mid"));
+    	 Sequence sequence = MidiSystem.getSequence(new File("C:\\Users\\is96092\\Desktop\\music\\furelise.mid"));
 
          int trackNumber = 0;
          for (Track track :  sequence.getTracks()) {
